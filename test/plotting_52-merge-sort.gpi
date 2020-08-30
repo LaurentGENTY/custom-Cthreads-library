@@ -1,0 +1,9 @@
+set term pngcairo
+FILE=ARG1.'.dat'
+FILEP=ARG1.'_pthread.dat'
+set output "graphs/imgs/".ARG2.".png"
+set xlabel "Number of element in the table"
+set ylabel "Time in milliseconds"
+set title "Results for 52-merge-sort"
+plot FILE title 'Our implementation' with lines, \
+     FILEP title 'pthread implementation' with lines

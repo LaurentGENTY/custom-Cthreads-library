@@ -1,0 +1,22 @@
+set term pngcairo
+FILET=ARG1.'_thread.dat'
+FILEY=ARG1.'_yield.dat'
+FILEPT=ARG1.'_pthread_thread.dat'
+FILEPY=ARG1.'_pthread_yield.dat'
+
+set output "graphs/imgs/".ARG2."_thread.png"
+set logscale xy
+set xlabel "Number of thread created"
+set ylabel "Time in microseconds"
+set title "Results for switch many with number of yield set to 50"
+plot FILET title 'Our implementation' with lines, \
+     FILEPT title 'pthread implementation' with lines
+
+
+set output "graphs/imgs/".ARG2."_yield.png"
+set logscale xy
+set xlabel "Number of yield done"
+set ylabel "Time in microseconds"
+set title "Results for switch many with number of thread set to 50"
+plot FILEY title 'Our implementation' with lines, \
+     FILEPY title 'pthread implementation' with lines

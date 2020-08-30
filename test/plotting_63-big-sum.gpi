@@ -1,0 +1,22 @@
+set term pngcairo
+FILET=ARG1.'_thread.dat'
+FILEY=ARG1.'_integers.dat'
+FILEPT=ARG1.'_pthread_thread.dat'
+FILEPY=ARG1.'_pthread_integers.dat'
+
+set output "graphs/imgs/".ARG2."_thread.png"
+set xlabel "Number of thread created"
+set ylabel "Time in milliseconds"
+set logscale y
+set title "Results for 63-big-sum with a sum up to 100 000"
+plot FILET title 'Our implementation' with lines, \
+     FILEPT title 'pthread implementation' with lines
+
+
+set output "graphs/imgs/".ARG2."_integers.png"
+set xlabel "last integer of the sum"
+set ylabel "Time in milliseconds"
+set logscale y
+set title "Results 63-big-sum with number of thread set to 1001"
+plot FILEY title 'Our implementation' with lines, \
+     FILEPY title 'pthread implementation' with lines

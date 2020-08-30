@@ -1,0 +1,8 @@
+set term pngcairo
+FILET=ARG1.".dat"
+
+set output "graphs/imgs/".ARG2.".png"
+set xlabel "Timeslice up to in microseconds (+min timeslice of 5ms)"
+set ylabel "Time in microseconds"
+set title "Results for premption-big-sum with a sum up to 100 000, 1000 threads used"
+plot FILET title 'Our implementation' with lines

@@ -1,0 +1,8 @@
+set term pngcairo
+FILET=ARG1.'.dat'
+
+set output "graphs/imgs/".ARG2.".png"
+set xlabel "Timeslice up to in microseconds"
+set ylabel "Time in microseconds"
+set title "Results for to-search with a table up to 100 000, 20 threads used"
+plot FILET title 'Our implementation' with lines

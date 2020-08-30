@@ -1,0 +1,9 @@
+set term pngcairo
+FILE=ARG1.'.dat'
+FILEP=ARG1.'_pthread.dat'
+set output "graphs/imgs/".ARG2.".png"
+set xlabel "Entry parameter of fibonacci function"
+set ylabel "Time in seconds"
+set title "Results for fibonacci"
+plot FILE title 'Our implementation' with lines, \
+     FILEP title 'pthread implementation' with lines

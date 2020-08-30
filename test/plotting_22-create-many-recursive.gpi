@@ -1,0 +1,9 @@
+set term pngcairo
+FILE=ARG1.'.dat'
+FILEP=ARG1.'_pthread.dat'
+set output "graphs/imgs/".ARG2.".png"
+set xlabel "Number of thread created"
+set ylabel "Time in microseconds"
+set title "Results for create many recursive"
+plot FILE title 'Our implementation' with lines, \
+     FILEP title 'pthread implementation' with lines
